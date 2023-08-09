@@ -1,0 +1,13 @@
+apiVersion: tyk.tyk.io/v1alpha1
+kind: ApiDefinition
+metadata:
+ name: api-demo
+spec:
+ name: api-demo
+ use_keyless: true
+ protocol: http
+ active: true
+ proxy:
+   target_url: http://api-demo.api-demo.svc.cluster.local
+   listen_path: /clock
+   strip_listen_path: true
